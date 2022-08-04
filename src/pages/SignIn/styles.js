@@ -41,7 +41,6 @@ export const Form = styled.form`
 export const Background = styled.div`
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
-  opacity: 0.5;
   flex: 1;
   @media (max-width: 600px) {
     flex: 0;
