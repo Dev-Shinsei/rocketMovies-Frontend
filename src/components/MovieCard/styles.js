@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.button`
   padding: 32px 32px 40px;
@@ -24,4 +24,4 @@ export const Container = styled.button`
     color: ${({ theme }) => theme.COLORS.WHITE};
     margin-top: 30px;
   }
-`
+`;

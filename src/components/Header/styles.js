@@ -16,7 +16,6 @@ export const Container = styled.header`
   }
   grid-area: header;
 `;
-
 export const Profile = styled.div`
   display: flex;
   justify-content: flex-end;

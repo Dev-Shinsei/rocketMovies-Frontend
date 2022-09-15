@@ -6,38 +6,33 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
   body {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.WHITE};
     -webkit-font-smoothing: antialiased;
   }
-
-  body, input, button, textarea {
+  body * {
     font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    outline: none;
   }
-
-  a{
+  a {
     text-decoration: none;
   }
-  
   button, a {
     cursor: pointer;
-    transition: filter 0.2s;
+    transition: filter(0.2);
   }
   button:hover, a:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.9)
   }
   ::-webkit-scrollbar {
-    width: 8px;
-  }
+  width: 8px;
+}
   ::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.COLORS.PINK};
-    border-radius: 8px;
   
+  border-radius: 10px;
+}
+  ::-webkit-scrollbar-thumb {
+  background-color: ${({ theme }) => theme.COLORS.PINK};
+  border-radius: 8px;
+}
 `;

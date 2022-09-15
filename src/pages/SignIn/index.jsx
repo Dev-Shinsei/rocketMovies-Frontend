@@ -1,22 +1,17 @@
-import { Link } from "react-router-dom";
-import { Input } from "../../components/Input";
-import { FiMail, FiLock } from "react-icons/fi";
-import { Button } from "../../components/Button";
-import { Container, Form, Background } from "./styles";
-import { useAuth } from "../../hooks/auth";
 import { useState } from "react";
+import { useAuth } from "../../hooks/auth";
+import { FiMail, FiLock } from "react-icons/fi";
+import { Container, Form, Background } from "./styles";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const { signIn, loading, setLoading } = useAuth();
-
+  const { signIn } = useAuth();
   function handleSignIn() {
-    if ((email, password)) {
-      signIn({ email, password });
-      setLoading(true);
-    }
+    signIn({ email, password });
   }
 
   return (
@@ -27,27 +22,24 @@ export function SignIn() {
         <h2>Faça seu login</h2>
 
         <Input
+          type="text"
           icon={FiMail}
-          type="email"
           placeholder="E-mail"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <Input
-          icon={FiLock}
           type="password"
+          icon={FiLock}
           placeholder="Senha"
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button
-          disabled={loading}
-          title={loading ? "Carregando..." : "Entrar"}
-          onClick={handleSignIn}
-        />
+        <Button title="Entrar" onClick={handleSignIn} />
 
         <Link to="/register">Criar conta</Link>
       </Form>
+
       <Background />
     </Container>
   );

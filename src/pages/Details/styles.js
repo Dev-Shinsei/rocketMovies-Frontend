@@ -46,7 +46,6 @@ export const TitleRating = styled.div`
     font-size: 36px;
   }
 `;
-
 export const AuthorInfo = styled.div`
   display: flex;
   align-items: center;
@@ -70,7 +69,6 @@ export const AuthorInfo = styled.div`
 export const Tags = styled.div`
   margin-block: 40px;
 `;
-
 export const Description = styled.div`
   text-align: justify;
   line-height: 21px;

@@ -2,24 +2,26 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
   margin-bottom: 8px;
   border-radius: 10px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
   > input {
-    height: 56px;
     width: 100%;
-    padding: 12px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    height: 56px;
     background: transparent;
-    border: 0;
-    &:placeholder {
+    border: none;
+    font-size: 16px;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
   }
   > svg {
-    margin-left: 16px;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 `;

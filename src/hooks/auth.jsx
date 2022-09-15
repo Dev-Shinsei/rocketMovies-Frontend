@@ -1,4 +1,6 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { createContext, useContext } from "react";
 
 import { api } from "../services/api";
 
@@ -8,7 +10,7 @@ function AuthProvider({ children }) {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
-  async function singIn({ email, password }) {
+  async function signIn({ email, password }) {
     try {
       setLoading(true);
       const response = await api.post("/sessions", { email, password });
@@ -41,9 +43,9 @@ function AuthProvider({ children }) {
       }
       await api.put("/users", user);
 
-      localSotrage.setItem("@rocketmovies:user", JSON.stringfy(user));
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
       setData({ user, token: data.token });
-      alert("Perfil Atualizado.");
+      alert("Perfil atualizado.");
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
@@ -80,7 +82,7 @@ function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        singIn,
+        signIn,
         loading,
         setLoading,
         signOut,
